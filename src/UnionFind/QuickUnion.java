@@ -22,9 +22,9 @@ public class QuickUnion {
     }
 
     public void addConnect(int m, int n) {
-        if (getRoot(m) != getRoot(n)) {
-            id[m] = getRoot(n);
-        }
+        int a = getRoot(m);
+        int b = getRoot(n);
+        id[a] = b;
     }
 
     public void prid() {

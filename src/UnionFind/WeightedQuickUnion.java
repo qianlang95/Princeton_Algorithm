@@ -6,8 +6,10 @@ public class WeightedQuickUnion {
 
     public WeightedQuickUnion(int n) {
         id = new int[n];
+        count = new int[n];
         for (int i = 0; i < n; i++) {
             id[i] = i;
+            count[i] = 1;
         }
     }
 
