@@ -15,6 +15,7 @@ public class WeightedQuickUnion {
 
     public int getRoot(int n) {
         while (n != id[n]) {
+            id[n] = id[id[n]];
             n = id[n];
         }
         return n;
@@ -25,8 +26,15 @@ public class WeightedQuickUnion {
     }
 
     public void addConnect(int m, int n) {
-        if (getRoot(m) != getRoot(n)) {
-            id[m] = getRoot(n);
+        int a = getRoot(m);
+        int b = getRoot(n);
+        if (a == b) return; //same union
+        if (count[a] <= count[b]) {
+            count[b] += count[a];
+            id[a] = b;
+        } else {
+            count[a] += count[b];
+            id[b] = a;
         }
     }
 
