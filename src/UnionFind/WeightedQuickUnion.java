@@ -32,7 +32,8 @@ public class WeightedQuickUnion {
         if (count[a] <= count[b]) {
             count[b] += count[a];
             id[a] = b;
-        } else {
+        }
+        else {
             count[a] += count[b];
             id[b] = a;
         }
@@ -46,6 +47,7 @@ public class WeightedQuickUnion {
     }
 
     public static void main(String[] args) {
+        System.out.println("WeightedQuickUnion");
         QuickUnion qu = new QuickUnion(10);
         int root = qu.getRoot(4);
         boolean isUnion = qu.connected(3, 4);
